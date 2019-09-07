@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-segment (ionChange)="onFilterUpdate($event)">
+      <ion-segment-button value="regular" checked>Regular</ion-segment-button>
+      <ion-segment-button value="occasional">Occasional</ion-segment-button>
+    </ion-segment>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let product of filteredProducts" lines="none">
+            <ion-card class="product-card">
+              <ion-row class="ion-align-items-end">
+                <ion-col size="auto">
+                    <ion-img [src]="product.imageUrl"></ion-img>
+                  </ion-col>
+                  <ion-col class="ion-no-padding">
+                    <h3> {{ product.title }} </h3>
+                    <p class="product-description"> {{ product.description }} </p>
+                    <ion-row>
+                      <ion-col>
+                          <ion-item class="quantity">
+                            <ion-select interface="popover" placeholder="Quantity">
+                              <ion-select-option value="1">1</ion-select-option>
+                              <ion-select-option value="2">2</ion-select-option>
+                              <ion-select-option value="3">3</ion-select-option>
+                              <ion-select-option value="4">4</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                      </ion-col>
+                      <ion-col>
+                        <ion-item class="return">
+                          <ion-select interface="popover" placeholder="Return">
+                            <ion-select-option value="1">1</ion-select-option>
+                            <ion-select-option value="2">2</ion-select-option>
+                            <ion-select-option value="3">3</ion-select-option>
+                            <ion-select-option value="4">4</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-button (click)="onaddedToCart()" fill="outline">Add to Cart</ion-button>  
+                    <ion-button>Order Now</ion-button>
+                  </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

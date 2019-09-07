@@ -1,0 +1,22 @@
+.product-card{
+    width: 100%;
+
+    ion-img{
+        width:120px;
+        height: 120px;
+    }
+
+    h3{
+        font-size:1.2em;
+        font-weight: bolder;
+    }
+    .product-description{
+        margin-top:-5px;
+        font-size: 0.8em;
+    }
+    ion-button{
+        font-size:0.8em;
+    }
+}
+
+
