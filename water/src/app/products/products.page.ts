@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+
 import { SegmentChangeEventDetail } from '@ionic/core';
+
 
 import { Product } from './product.model';
 import { ProductsService } from './products.service';
@@ -13,7 +16,10 @@ import { ToastController } from '@ionic/angular';
 export class ProductsPage implements OnInit {
   loadedProducts: Product[];
   filteredProducts: Product[];
-  constructor(private productService: ProductsService, private toastController: ToastController) { }
+  price = 20;
+  discount = 5;
+  total = 15;
+  constructor(private productService: ProductsService, private toastController: ToastController, private currency: CurrencyPipe) { }
 
   private filterProducts(filter: string) {
     return this.loadedProducts.filter( product => product.category === filter);
@@ -31,19 +37,18 @@ export class ProductsPage implements OnInit {
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      header: 'Item Added to Cart (6 Items)',
+      message: `Cart Total: ${this.currency.transform(this.total, 'INR')}`,
+      keyboardClose: true,
+      cssClass: 'my-toast-class',
       buttons: [
         {
           side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Go TO Cart',
-          role: 'cancel',
+          icon: 'checkmark-circle',
+          role: 'null'
+        },
+        {
+          text: 'Place Order',
           handler: () => {
             console.log('Cancel clicked');
           }
