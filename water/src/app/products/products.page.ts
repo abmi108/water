@@ -63,4 +63,11 @@ export class ProductsPage implements OnInit {
     this.presentToastWithOptions();
   }
 
+  onReturnQtyEntered(returnQty) {
+    console.log(returnQty);
+    if(returnQty > purchaseQty) {
+      console.log("Return Quantity cannot be greater than purchase quantity!");
+    }
+  }
+
 }

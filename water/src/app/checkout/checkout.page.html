@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card class="ion-padding-start" >
+		<ion-grid>
+			<ion-row class="ion-align-items-center">
+				<ion-col size="9">
+					<p> Deliver to: <span class="address-main"> {{address.name}}, {{address.pin}} </span> </p>
+					<p> {{address.house}} </p>
+				</ion-col>
+				<ion-col>
+					<ion-button fill="outline">Change</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-card>	
+
+	<ion-list>
+		<ion-item *ngFor="let product of products">
+			<ion-card class="product-card">
+				<ion-grid>
+					<ion-row>
+						<ion-col size="auto">
+							<ion-img [src]="product.imageUrl"></ion-img>
+						</ion-col>
+						<ion-col>
+							<h3> {{ product.title }} </h3>
+							<p> {{ product.description }} </p> 
+							<h2> {{ product.price }}  <small> <del> 342 </del> <span class="discount"> 32% Return Discount </span> </small>  </h2>
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+				<p> </p>
+			</ion-card>
+		</ion-item>
+	</ion-list>
+</ion-content>

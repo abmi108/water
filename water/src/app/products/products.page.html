@@ -24,23 +24,15 @@
                     <p class="product-description"> {{ product.description }} </p>
                     <ion-row>
                       <ion-col>
-                          <ion-item class="quantity">
-                            <ion-select interface="popover" placeholder="Quantity">
-                              <ion-select-option value="1">1</ion-select-option>
-                              <ion-select-option value="2">2</ion-select-option>
-                              <ion-select-option value="3">3</ion-select-option>
-                              <ion-select-option value="4">4</ion-select-option>
-                            </ion-select>
-                          </ion-item>
+                        <ion-item class="quantity">
+                          <ion-label position="floating">Purchase Qty</ion-label>
+                          <ion-input></ion-input>
+                        </ion-item>
                       </ion-col>
                       <ion-col>
                         <ion-item class="return">
-                          <ion-select interface="popover" placeholder="Return">
-                            <ion-select-option value="1">1</ion-select-option>
-                            <ion-select-option value="2">2</ion-select-option>
-                            <ion-select-option value="3">3</ion-select-option>
-                            <ion-select-option value="4">4</ion-select-option>
-                          </ion-select>
+                          <ion-label position="floating">Return Qty</ion-label>
+                          <ion-input (input)="onReturnQtyEntered($event.target.value)"></ion-input>
                         </ion-item>
                       </ion-col>
                     </ion-row>
