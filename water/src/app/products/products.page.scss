@@ -18,3 +18,31 @@
         font-size:0.8em;
     }
 }
+
+.quantity{
+    /*margin:0 20px;*/
+    /*border:1px solid;*/
+
+    ion-input{
+        width:100%;
+        /*border:1px solid;*/
+        --padding-bottom:0 !important;
+        --padding-top:0 !important;
+        height:10px !important;
+        line-height: 10px !important;
+        font-size: 0.8em;
+/*        height:20px !important;
+        width:30px !important;*/
+    }
+}
+
+#quantity-row{
+    /*border:1px solid red;*/
+}
+
+ion-label{
+    font-size:0.8em !important;
+}
+ion-input{
+    padding:0 !important;
+}

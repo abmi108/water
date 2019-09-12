@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 
 import { SegmentChangeEventDetail } from '@ionic/core';
@@ -19,7 +20,7 @@ export class ProductsPage implements OnInit {
   price = 20;
   discount = 5;
   total = 15;
-  constructor(private productService: ProductsService, private toastController: ToastController, private currency: CurrencyPipe) { }
+  constructor(private productService: ProductsService, private toastController: ToastController, private currency: CurrencyPipe, private router: Router) { }
 
   private filterProducts(filter: string) {
     return this.loadedProducts.filter( product => product.category === filter);
@@ -48,9 +49,9 @@ export class ProductsPage implements OnInit {
           role: 'null'
         },
         {
-          text: 'Place Order',
+          text: 'Go to Cart',
           handler: () => {
-            console.log('Cancel clicked');
+            this.router.navigate(['/checkout']);
           }
         }
       ]

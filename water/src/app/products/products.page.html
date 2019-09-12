@@ -22,22 +22,22 @@
                   <ion-col class="ion-no-padding">
                     <h3> {{ product.title }} </h3>
                     <p class="product-description"> {{ product.description }} </p>
-                    <ion-row>
-                      <ion-col>
+                    <ion-row id="quantity-row">
+                      <ion-col size="4" offset="1">
                         <ion-item class="quantity">
                           <ion-label position="floating">Purchase Qty</ion-label>
-                          <ion-input></ion-input>
+                          <ion-input type="text"></ion-input>
                         </ion-item>
                       </ion-col>
-                      <ion-col>
-                        <ion-item class="return">
+                      <ion-col size="4" offset="1">
+                        <ion-item class="quantity">
                           <ion-label position="floating">Return Qty</ion-label>
                           <ion-input (input)="onReturnQtyEntered($event.target.value)"></ion-input>
                         </ion-item>
                       </ion-col>
                     </ion-row>
                     <ion-button (click)="onaddedToCart()" fill="outline">Add to Cart</ion-button>  
-                    <ion-button>Order Now</ion-button>
+                    <ion-button [routerLink]="['/checkout']">Order Now</ion-button>
                   </ion-col>
               </ion-row>
             </ion-card>
