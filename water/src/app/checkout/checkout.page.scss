@@ -39,13 +39,11 @@ small{
 	padding:20px;
 }
 
-/*box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
-
 #cart-total{
 	font-size:1.2em;
 }
 
-#price-details{
+#price-details-link{
 	font-size: 0.6em;
 	color: var(--ion-color-primary);
 }
@@ -54,4 +52,25 @@ small{
 	background: var(--ion-color-tertiary);
 	color:#fff;
 	padding:10px;
+}
+
+.price-details-item{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 40px;
+}
+
+ion-card-header{
+	border-bottom:1px solid #f0f0f0;
+}
+
+#amount-details{
+	border-top: 1px dashed #e0e0e0;
+	font-weight: bold;
+}
+
+#savings{
+	padding: 20px 30px;
+	border-top: 1px solid #f0f0f0;
+	color: var(--ion-color-success);
 }
