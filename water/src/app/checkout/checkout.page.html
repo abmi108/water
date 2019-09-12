@@ -22,7 +22,7 @@
 	<ion-list>
 		<ion-item *ngFor="let product of products">
 			<ion-card class="product-card">
-				<ion-button class="remove-button" slot="icon-only" color="danger" fill="clear" class="ion-float-right">
+				<ion-button class="remove-button" slot="icon-only" color="danger" fill="clear" (click)="removeAlert()" class="ion-float-right">
 					<ion-icon name="close"></ion-icon>
 				</ion-button>
 				<ion-grid>
