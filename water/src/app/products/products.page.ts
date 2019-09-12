@@ -65,9 +65,9 @@ export class ProductsPage implements OnInit {
 
   onReturnQtyEntered(returnQty) {
     console.log(returnQty);
-    if(returnQty > purchaseQty) {
-      console.log("Return Quantity cannot be greater than purchase quantity!");
-    }
+    // if(returnQty > purchaseQty) {
+    //   console.log("Return Quantity cannot be greater than purchase quantity!");
+    // }
   }
 
 }

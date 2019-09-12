@@ -22,7 +22,9 @@ export class CheckoutPage implements OnInit {
   }
 
 products: Product[] = [
-	 new Product('p1', 'Product1', 'Good Product', 123, this.productService.productImages[0], 20, 10, 'regular' )
+	 new Product('p1', 'Product1', 'Good Product', 123, this.productService.productImages[0], 20, 10, 'regular' ),
+	 new Product('p2', 'Product3', 'Very Good Product', 23, this.productService.productImages[1], 120, 150, 'regular' ),
+	 new Product('p3', 'Product3', 'Not Good Product', 13, this.productService.productImages[2], 200, 70, 'occasional' )
 	]
 
 }

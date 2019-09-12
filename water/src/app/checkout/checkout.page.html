@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>checkout</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>checkout</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -22,14 +22,44 @@
 	<ion-list>
 		<ion-item *ngFor="let product of products">
 			<ion-card class="product-card">
+				<ion-button class="remove-button" slot="icon-only" color="danger" fill="clear" class="ion-float-right">
+					<ion-icon name="close"></ion-icon>
+				</ion-button>
 				<ion-grid>
 					<ion-row>
 						<ion-col size="auto">
 							<ion-img [src]="product.imageUrl"></ion-img>
 						</ion-col>
 						<ion-col>
-							<h3> {{ product.title }} </h3>
-							<p> {{ product.description }} </p> 
+							<ion-row>
+								<ion-col>
+
+								</ion-col>
+								<ion-col>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h3> {{ product.title }} </h3>
+									<p> {{ product.description }} </p> 
+								</ion-col>
+								<ion-col class="ion-no-padding">
+									<ion-row>
+										<ion-col size="6">
+											<ion-item class="quantity">
+												<ion-label position="floating">Purchase Qty</ion-label>
+												<ion-input></ion-input>
+											</ion-item>
+										</ion-col>
+										<ion-col size="6">
+											<ion-item class="return">
+												<ion-label position="floating">Return Qty</ion-label>
+												<ion-input></ion-input>
+											</ion-item>
+										</ion-col>
+									</ion-row>
+								</ion-col>
+							</ion-row>
 							<h2> {{ product.price }}  <small> <del> 342 </del> <span class="discount"> 32% Return Discount </span> </small>  </h2>
 						</ion-col>
 					</ion-row>
@@ -39,3 +69,14 @@
 		</ion-item>
 	</ion-list>
 </ion-content>
+<div class="confirm-card"> 
+	<div id="confirm-card-details">
+		<div id="cart-total">Subtotal (3 items): 243114</div>
+		<a id="price-details" href="#">Details</a>
+	</div>
+	<div id="order-confirm">
+		 <button id="order-confirm-button">PLACE ORDER</button>
+	</div>
+	<!-- <div id="cart-total">Subtotal (3 items): 243114  <button id="order-confirm-button">PLACE ORDER</button></div>
+	<a id="price-details" href="#">Details</a>  -->
+</div>

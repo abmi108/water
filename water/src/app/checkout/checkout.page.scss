@@ -18,3 +18,40 @@ small{
 .discount{
 	color: var(--ion-color-success);
 }
+
+.remove-button{
+	position:absolute;
+}
+
+[ion-fixed] {
+	width:100%;
+	background: red;
+}
+
+.confirm-card{
+	width:100%;
+	box-shadow: 0 -1px 5px rgba(0,0,0,0.19), 0 -1px 3px rgba(0,0,0,0.23) !important;
+	z-index:999;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding:20px;
+}
+
+/*box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+
+#cart-total{
+	font-size:1.2em;
+}
+
+#price-details{
+	font-size: 0.6em;
+	color: var(--ion-color-primary);
+}
+
+#order-confirm-button{
+	background: var(--ion-color-tertiary);
+	color:#fff;
+	padding:10px;
+}
